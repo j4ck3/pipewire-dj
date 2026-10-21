@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=PipeWire DJ
+Comment=Mix tracks, your mic and app audio into one virtual microphone
+Exec=pipewire-dj
+Icon=audio-input-microphone
+Categories=AudioVideo;Audio;Mixer;
+Terminal=false
+StartupWMClass=pipewire-dj
