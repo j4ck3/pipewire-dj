@@ -88,6 +88,7 @@ export const api = {
   setPtt: (on: boolean) => invoke<void>("set_ptt", { on }),
   waveform: (id: number, buckets: number) => invoke<number[]>("waveform", { id, buckets }),
   writeGameConfig: () => invoke<void>("write_game_config"),
+  openSupportedSites: () => invoke<void>("open_supported_sites"),
 };
 
 export const fmtTime = (s: number) => {

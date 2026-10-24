@@ -154,3 +154,13 @@ pub fn write_game_config(app: State<Arc<App>>) -> R<()> {
         Err("CS2 install not found or cfg folder not writable".into())
     }
 }
+
+/// Open the list of sites yt-dlp can import from in the default browser.
+#[tauri::command]
+pub fn open_supported_sites() -> R<()> {
+    std::process::Command::new("xdg-open")
+        .arg("https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md")
+        .spawn()
+        .map(|_| ())
+        .map_err(e)
+}

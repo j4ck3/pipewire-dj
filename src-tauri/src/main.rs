@@ -126,6 +126,7 @@ fn main() {
             commands::set_ptt,
             commands::waveform,
             commands::write_game_config,
+            commands::open_supported_sites,
         ])
         .build(tauri::generate_context!())
         .expect("error while building tauri application")

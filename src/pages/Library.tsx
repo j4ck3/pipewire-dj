@@ -58,13 +58,22 @@ export default function Library({ tracks, status, refresh, onError }: Props) {
         <button onClick={importFiles} disabled={!!busy}>
           Import files
         </button>
-        <input
-          className="grow"
-          placeholder="YouTube or other URL (yt-dlp)"
-          value={url}
-          onChange={(e) => setUrl(e.target.value)}
-          onKeyDown={(e) => e.key === "Enter" && importUrl()}
-        />
+        <div className="url-field grow">
+          <input
+            placeholder="YouTube or other URL (yt-dlp)"
+            value={url}
+            onChange={(e) => setUrl(e.target.value)}
+            onKeyDown={(e) => e.key === "Enter" && importUrl()}
+          />
+          <button
+            type="button"
+            className="link"
+            title="Open the list of sites yt-dlp supports"
+            onClick={() => api.openSupportedSites().catch((e) => onError(String(e)))}
+          >
+            Supported sites ↗
+          </button>
+        </div>
         <button onClick={importUrl} disabled={!!busy || !url.trim()}>
           Import URL
         </button>
